@@ -1,6 +1,5 @@
 <?php
 class mod_kcaptcha extends ModuleHelper {
-	private $KEY_PUBLIC   = '78fd1ed67e4e25a7fd5258ff5af96196';
 	private $kcaptcha;
 	private $kaptcha_api = "https://sys.kornineq.de/kaptcha/kaptcha-verify.php";
 	private $sitekey = "";
@@ -19,7 +18,7 @@ class mod_kcaptcha extends ModuleHelper {
 	}
 
 	public function autoHookPostForm(&$txt){
-        $txt .= '<tr><th class="postblock">Verification</th><td>'.'<script src="https://sys.kornineq.de/kaptcha/kaptcha.js?536346s" data-sitekey="'.$this->KEY_PUBLIC.'" type="text/javascript"></script>'.'</td></tr>';
+        $txt .= '<tr><th class="postblock">Verification</th><td>'.'<script src="https://sys.kornineq.de/kaptcha/kaptcha.js?536346s" data-sitekey="'.$this->sitekey.'" type="text/javascript"></script>'.'</td></tr>';
 	}
 	
 	function kaptcha_validate() {
